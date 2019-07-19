@@ -1,17 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <p>{{counter}}</p>
+    <button @click="counter ++">点我+</button>
+    <button @click="counter --">点我-</button>
+    <button @click="extra">抽方法</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  data:function(){
+    return {
+      counter : 0
+    }
+  },
+  methods:{
+    extra : function(){
+      this.counter == "抽方法" ? this.counter = 0 : this.counter = "抽方法";
+    }
   }
 }
 </script>
